@@ -10,7 +10,10 @@
          [ngClass]="{ 'show': navbarOpen }">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/radio" routerLinkActive="active">Radio</a>
+          <a class="nav-link" [routerLink]="['/radio']" [queryParams]="{ country: 'isr' }" routerLinkActive="active">Radio Israel</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/radio']" [queryParams]="{ country: 'ukr' }" routerLinkActive="active">Radio Ukraine</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/radio-ru" routerLinkActive="active">Radio Москва</a>

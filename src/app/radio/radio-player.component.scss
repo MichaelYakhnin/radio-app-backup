@@ -1,6 +1,10 @@
 ul.list li a img {
-	border-radius: 15px;
-	border: none;
+	width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    object-fit: cover;
+    margin-right: 15px;
+    background-color:#86b7fe
 }
 ul.list {
     list-style-type: none;
@@ -53,8 +57,12 @@ li{
     cursor: pointer;  
 }
 .cell img{
+    width: 70px;
+    height: 70px;
     border-radius: 15px;
-    padding: 5px;
+    object-fit: cover;
+    margin-right: 15px;
+    background-color:#86b7fe
 }
 @media only screen and (max-width: 600px) {
     .audio{

@@ -1,10 +1,10 @@
 <div class="header">
   <div class="player" *ngIf="src">
     <div class="audio">
-      <audio-player *ngIf="!src[1]?.includes('.m3u8')" src="{{src[1]}}" showStateLabel="true" autoplay="true"></audio-player>
-      <app-vjs-player *ngIf="src[1]?.includes('.m3u8')" [options]="{autoplay: true, controls: true, sources: [{ src: src[1], type: 'application/x-mpegURL' }]}"></app-vjs-player>
+      <audio-player *ngIf="!src.url?.includes('.m3u8')" src="{{src.url}}" showStateLabel="true" autoplay="true"></audio-player>
+      <app-vjs-player *ngIf="src.url?.includes('.m3u8')" [options]="{autoplay: true, controls: true, sources: [{ src: src.url, type: 'application/x-mpegURL' }]}"></app-vjs-player>
     </div>
-    <div class="radio-station">{{src[2]}}</div>
+    <div class="radio-station">{{src.name}}</div>
   </div>
   <div class="favorities-container" *ngIf="stImages.length > 0">
     <div *ngFor="let station of stImages">
@@ -21,10 +21,10 @@
       <a href="javascript:void(0)" (click)="play(i)">
         <div class="station-container">
           <div class="station-image">
-            <img src="assets/images/small/{{item[0]}}.jpg" alt="{{item[2]}}" title="{{item[2]}}" />
+            <img [src]="'assets/'+ routeParam + '/'+ item.id + (routeParam=='isr'?'.jpg':'.png')" alt="{{item.name}}" title="{{item.name}}" />
           </div>
           <div class="station-name">
-            {{item[2]}}
+            {{item.name}}
           </div>
           <div class="add-favorite">
             <a href="javascript:void(0)" (click)="addToFavorities(i)">Добавить в избранные</a>
